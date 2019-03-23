@@ -5,7 +5,7 @@
 >
 > - Loading...
 
-![brad-video](brad-video.gif?raw=true)
+<img alt="brad video" src="brad-video.gif?raw=true" width="300">
 
 It is important that graphical applications remain responsive while time-consuming tasks
 are being performed. Imagine an mp3 player application that didn't allow you to interact
