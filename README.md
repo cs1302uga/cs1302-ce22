@@ -6,7 +6,7 @@
 > - Loading...
 
 <a href="https://i.imgur.com/hjbuSHR.gifv">
-<img alt="brad video" src="https://i.imgur.com/hjbuSHR.gif?play" width="300">
+<img alt="brad video" src="https://i.imgur.com/hjbuSHR.jpg?play" width="300">
 </a>
 
 It is important that graphical applications remain responsive while time-consuming tasks
