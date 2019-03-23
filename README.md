@@ -5,10 +5,12 @@
 >
 > - Loading...
 
-This class exercise explores functional interfaces, lambda expressions, and method
-references in conjunction with generic methods and interfaces. In this exercise, 
-only the generic method signatures will be provided. Implementation details are left 
-to the student.
+It is important that graphical applications remain responsive while time-consuming tasks
+are being performed. Imagine an mp3 player application that didn't allow you to interact
+with the GUI while the current song was playing. That would mean you couldn't pause,
+change songs, minimize the app, etc until the song ended. This problem is solved by using
+multiple threads of execution. This class exercise introduces the reader to the use of
+Java threads to allow seemingly simulataneous actions within an application.
 
 ## References and Prerequisites
 
@@ -26,13 +28,13 @@ command depends on your present working directory), then please note that contex
 
 ### Getting Started
 
-1. Use Git to clone the repository for this exercise onto Nike into a subdirectory called `cs1302-ce18`:
+1. Use Git to clone the repository for this exercise onto Nike into a subdirectory called `cs1302-ce22`:
 
    ```
-   $ git clone --depth 1 https://github.com/cs1302uga/cs1302-ce18.git
+   $ git clone --depth 1 https://github.com/cs1302uga/cs1302-ce22.git
    ```
 
-1. Change into the `cs1302-ce18` directory that was just created and look around. There should be
+1. Change into the `cs1302-ce22` directory that was just created and look around. There should be
    multiple Java files contained within the directory structure. To see a listing of all of the 
    files under the `src` subdirectory, use the `find` command as follows:
    
@@ -41,102 +43,144 @@ command depends on your present working directory), then please note that contex
    ```
 
 ### Exercise Steps
-   
-1. Take a close look at the `printlnMappedMatches` method and its associated Javadoc in `MoreLambdaFun.java`. 
-   The exact signature for this method is:
-   ```java
-   private static <T> void printlnMappedMatches(T[] t, Predicate<T> p, Function<T, String> f)
+
+        It we need our GUI application to remain responsive
+while other tasks are happening in the background. In this exercise, students will
+create a separate thread to load an image from a user-specified URL. Since downloading
+an image can be time-consuming, we want to make sure our app doesn't hang while this
+action is being performed. To clearly show the impact of creating and using another
+thread to handle this time-consuming task, we have introduced an intentional 5 second
+delay to the starter code.
+
+In this checkpoint, you will focus on creating the basic GUI layout for the `ImageApp`. Don't worry about
+adding functionality to the button just yet.  At the end of the checkpoint, your GUI should look like the
+following image:
+
+<img src="https://github.com/cs1302uga/cs1302-ce19/blob/master/ScreenShot.png?raw=true" width=300>
+
+1. Consider the following containment heirarchy:
+
    ```
-   Implement the `printlnMappedMatches` method in `MoreLambdaFun.java`. You do not need to use a lambda for this step.
-   You will only need to use the 
-   [`Function<T, R>`](https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html) 
-   and 
-   [`Predicate<T>`](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html)
-   references to call the appropriate methods.
+                                        --|
+                         Stage            |
+                           |              |
+                         Scene            |
+          |--              |              |
+          |               VBox            | Overall
+          |               / \             | Containment
+   Scene  |              /   \            | Hierarchy
+   Graph  |            HBox  ImageView    |
+          |            / \                |
+          |           /   \               |
+          |    TextField  Button          |
+          |--                           --|
+   ```
    
-1. At the end of the `main` method of `MoreLambdaFun` class:
+   Each node corresponds to an object of some class under the 
+   [`javafx`](https://docs.oracle.com/javase/8/javafx/api/toc.htm)
+   package. The diagram for the scene graph assumes that child nodes
+   are added to their parents in a left-to-right order. For example,
+   the `HBox` and `ImageView` objects are added to the collection of
+   child nodes for the `VBox` object in that order.
+   
+1. **Compile and run the starter code without any errors or warnings.**
+   Specify `bin` as the default package for your compiled code.
+   
+   * If you have trouble running the starter code, then consult the 
+     [CSCI 1302 JavaFX Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/javafx/javafx.md).
+     
+1. The contents of the scene represent part of the state of your application.
+   As such, the variables that we use to refer to those objects should be
+   instance variables of your class. Consult the 
+   [API Documentation](https://docs.oracle.com/javase/8/javafx/api/toc.htm) and 
+   [referenced bookmarks](http://cobweb.cs.uga.edu/~mec/cs1302/gui/)
+   to determine some of the import statements that are needed, then add them to
+   the file for your `ImageApp` class. **Recompile before continuing.** 
+   
+1. Stage and commit your changes.
 
-   1. Declare a variable `bonusPred` of type `Predicate<Quiz>` and assign to it, using a lambda expression, a reference to
-      an object that tests if the quiz is a bonus quiz. Remember, you can always refer to the API documentation
-      for the associated interface when trying to determine the layout of your lambda.
+1. Now, for each object in the scene graph, declare an **instance variable** 
+   of the appropriate type with a good name. Do not create the objects here!
+   
+1. In the `start` method, construct the objects for the scene graph in
+   a top-down fashion, assigning their references to the instance variables
+   that you just declared. 
+   
+   1. Consult the 
+      [API Documentation](https://docs.oracle.com/javase/8/javafx/api/toc.htm) and 
+      for each class to see what constructors are available.
+      
+   1. Try to make the text content of visible nodes match the screenshot.
+      
+   1. For the `ImageView` object, we would like for you to create a separate
+      [`Image`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html)
+      object and use the 
+      [`ImageView(Image)`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/ImageView.html#ImageView-javafx.scene.image.Image-) constructor. The URL string that you should provide to
+      the `Image` constructor is:
+   
+      ```
+      http://cobweb.cs.uga.edu/~mec/cs1302/gui/default.png
+      ```
+      
+      **NOTE:** Do not use the `ImageView` constructor that directly takes a URL string.
+      If you do, then it will make it potentially more difficult to change the image
+      in a later step.
+  
+   1. Add any child nodes to the to their parent's 
+      collection of children using `getChildren().add`. 
+      
+   1. **Recompile and run.**
 
-   1. Declare a variable `numberFunc` of type `Function<Quiz, String>` and assign to it, using a lambda expression, 
-      a reference to an object that takes a `Quiz` object as a parameter and returns a `String` containing
-	  the quiz number and at least one other piece of information about the quiz (other than bonus).
-	  Remember, you can always refer to the API documentation for the associated interface when trying 
-	  to determine the layout of your lambda.
-   
-1. Call the `printlnMappedMatches` using your newly created variables.
-   Make sure to provide sufficient output so that it will be easy to 
-   convince your TA or instructor that everything is working properly.
-   
-1. Stage and commit all changes.
-   
-1. Using lambdas, write the code to print quiz numbers for all quizes that have a time limit that is under
-   twenty minutes. Make sure to provide sufficient output so that it will be easy to 
-   convince your TA or instructor that everything is working properly.
-   
-1. Stage and commit all changes.
+1. Stage and commit your changes.
 
+1. If you completed the steps correctly, your app should look similar to
+   the screenshot provided above. Congratulations on a good looking app!
+   
 **CHECKPOINT**
 
-1. Take a close look at the `copyOf` method and its associated Javadoc in `MoreLambdaFun.java`. 
-   The exact signature for this method is:
-   ```java
-   public static <T> T[] copyOf(T[] a, int l, IntFunction<T[]> g)
-   ```
-   Answer the following questions about this method in your notes:
-   
-   1. What is the generic type parameter?
-   
-   1. Specifically, what reference types can replace `T`?
-   
-   1. In order to call this method, we need a reference to an object of a class that implements 
-     `IntFunction<T[]>`. The interface is defined as 
-     [`IntFunction<R>`](https://docs.oracle.com/javase/8/docs/api/java/util/function/IntFunction.html). 
-     Here, we replace `R` with `T[]`. Keep this in mind when inspecting the API documentation 
-     for `IntFunction<R>`.
-	 
-   1. Write the full, expanded method signature (with the replaced types) of the single, abstract method
-      of `IntFunction<T[]>` in your notes. Pay careful attention to the return type and the type of the 
-      formal parameter.
+1. Now that you have your app looking good, let's make it do stuff. 
 
-1. After carefully reading its Javadoc comment, implement the `copyOf` method in `MoreLambdaFun.java`. 
-   You do not need to use a lambda for this step.
+1. In the `start` method of your `ImageApp` class, declare a variable
+   of type `EventHandler<ActionEvent>` called `loadHandler`, then assign
+   to it, using a lambda expression, an implementation of
+   `EventHandler<ActionEvent>` that prints out the text of the
+   `TextField` to standard output (i.e., the terminal).
+   **Recompile before continuing.**
    
-1. Stage and commit all changes.
-
-1. At the end of the `main` method of the `MoreLambdaFun` class:
-
-   1. Declare a variable `lessQuizzes` of type `Quiz[]` and, using your `copyOf` method, assign to it 
-      a copy of the array referred to by `quizzes` containing half as many quizzes (containing
-      the first half of the quizzes). You should supply the `g` parameter 
-      **using an array constructor method reference**. 
-      
-   1. Using a for-each loop, print the quiz numbers of all `Quiz` references in `lessQuizzes`.
-
-   1. Declare a variable `moreQuizzes` of type `Quiz[]` and, using your `copyOf` method, assign to it 
-      a copy of the array referred to by `quizzes` containing four (4) more spots for quizzes
-      (all `null`). You should supply the `g` parameter **using a regular lambda expression**. 
-      
-   1. Using an appropriate loop, print the quiz numbers of all non-null `Quiz` references in `moreQuizzes`. 
-      Also, print the length of the array to make sure it is the proper size.
-	  
-1. Create and document a `static` method called `makeQuizArray` that, if written correctly, a method 
-   reference for that method can be used to supply the `g` parameter in a call to your
-   `copyOf` method. Then, at the end of the `main` method of the `MoreLambdaFun` class:
+   * Take special care that you import the correct `ActionEvent` class,
+     as a quick Internet search may recommend the wrong one!
+     Consult the 
+     [API Documentation](https://docs.oracle.com/javase/8/javafx/api/toc.htm) and 
+     [referenced bookmarks](http://cobweb.cs.uga.edu/~mec/cs1302/gui/)
+     to determine the import statements that are needed.
+     
+1. Once your app is able to print the text from the `TextField` to 
+   standard output, ammend the code that is also creates an `Image`
+   object using the supplied URL, then sets the `image` propery of
+   the `ImageView` using the appropriated setter method.
+   **Recompile before continuing.**
    
-   1. Declare a variable `twentyQuizzes` of type `Quiz[]` and, using your `copyOf`, assign to it 
-      a copy of the array referred to by `quizzes` containing twenty spots for quizzes (with 
-      trailing `null` values as described in the Javadoc for `copyOf`). You should supply the `g` 
-      parameter **using a method reference** to the method you created in the previous step. 
-   1. Using an appropriate loop, print the quiz numbers of all non-null `Quiz` references in 
-      `twentyQuizzes`. Also, print the length of the array to make sure it is the proper size.
-	  
-1. Stage and commit all changes.
+   * Here are some URLs to try when testing your program:
+   
+     * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/pikachu.png`
+     * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/brad.jpg`
+     * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/SuccessKid.jpg`
+   
+   * Your program should not crash when supplied invalid input. Use
+     exception handling, as needed, to make the experience nicer
+     for the user. While we will explore creating popup windows
+     and dialogs in the future, it is sufficient to print a friendly
+     error message to standard output instead of letting the
+     program crash or display a stack trace.
+     
+1. Stage and commit your changes.
 
+1. If you completed the steps correctly, your app should not only look 
+   similar to the screenshot provided above, but it has the desired
+   functionality. Congratulations on a good looking, functional app!
+        
 **CHECKPOINT**
-
+   
 <hr/>
 
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-nd/4.0/)
