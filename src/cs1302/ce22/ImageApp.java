@@ -103,7 +103,8 @@ public class ImageApp extends Application {
     private void loadImage(ActionEvent e) {
 
         try {
-            Image newImg = new Image(urlField.getText(), DEF_HEIGHT, DEF_WIDTH, false, false);
+            Image newImg = new Image(DELAY_URL + urlField.getText(),
+                                     DEF_HEIGHT, DEF_WIDTH, false, false);
             imgView.setImage(newImg);
         } catch(IllegalArgumentException iae) {
             System.out.println("The supplied URL is invalid");
