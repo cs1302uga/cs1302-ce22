@@ -41,6 +41,7 @@ command depends on your present working directory), then please note that contex
    ```
    $ find src
    ```
+### Exercise Steps
 
 1. **Compile and run the starter code without any errors or warnings.**
    Specify `bin` as the default package for your compiled code.
@@ -78,8 +79,6 @@ An example image and the overall contaiment heirarchy for this app can be seen b
      * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/brad.jpg`
      * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/SuccessKid.jpg`
  
-### Exercise Steps
-
 While our delay is artificial, time-consuming code is common in the real world (as in the mp3 app 
 discussed earlier). In this exercise, we will modify the app so that it remains responsive to user
 actions while loading the image and also indicates to the user via a `Text` object that the image is
