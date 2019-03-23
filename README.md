@@ -56,7 +56,7 @@ An example image and the overall contaiment heirarchy for this app can be seen b
    <tr>
       <td><img src="https://github.com/cs1302uga/cs1302-ce19/blob/master/ScreenShot.png?raw=true" width=300>
 </td>
-      <td><pre><code>                   --|
+      <td><pre><code>                                        --|
                          Stage            |
                            |              |
                          Scene            |
