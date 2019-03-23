@@ -44,24 +44,19 @@ command depends on your present working directory), then please note that contex
 
 ### Exercise Steps
 
-    
- It we need our GUI application to remain responsive
-while other tasks are happening in the background. In this exercise, students will
-create a separate thread to load an image from a user-specified URL. Since downloading
-an image can be time-consuming, we want to make sure our app doesn't hang while this
-action is being performed. To clearly show the impact of creating and using another
-thread to handle this time-consuming task, we have introduced an intentional 5 second
-delay to the starter code.
+1. **Compile and run the starter code without any errors or warnings.**
+   Specify `bin` as the default package for your compiled code.
+   
+   * If you have trouble running the starter code, then consult the 
+     [CSCI 1302 JavaFX Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/javafx/javafx.md).
+     
+An example image and the overall contaiment heirarchy for this app can be seen below:
 
-In this checkpoint, you will focus on creating the basic GUI layout for the `ImageApp`. Don't worry about
-adding functionality to the button just yet.  At the end of the checkpoint, your GUI should look like the
-following image:
-
-<img src="https://github.com/cs1302uga/cs1302-ce19/blob/master/ScreenShot.png?raw=true" width=300>
-
-1. Consider the following containment heirarchy:
-
-   ```
+<table>
+   <tr>
+      <td><img src="https://github.com/cs1302uga/cs1302-ce19/blob/master/ScreenShot.png?raw=true" width=300>
+</td>
+      <td><pre><code>      ```
                                         --|
                          Stage            |
                            |              |
@@ -75,20 +70,38 @@ following image:
           |           /   \               |
           |    TextField  Button          |
           |--                           --|
-   ```
+   ```</code></pre></td>
+   </tr>
+   </table>
    
+      
    Each node corresponds to an object of some class under the 
    [`javafx`](https://docs.oracle.com/javase/8/javafx/api/toc.htm)
    package. The diagram for the scene graph assumes that child nodes
    are added to their parents in a left-to-right order. For example,
    the `HBox` and `ImageView` objects are added to the collection of
    child nodes for the `VBox` object in that order.
+
+
    
-1. **Compile and run the starter code without any errors or warnings.**
-   Specify `bin` as the default package for your compiled code.
+1. However, there's one small difference: we have introduced an intentional 5 second
+   delay to the starter code.
    
-   * If you have trouble running the starter code, then consult the 
-     [CSCI 1302 JavaFX Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/javafx/javafx.md).
+1. 
+ It we need our GUI application to remain responsive
+while other tasks are happening in the background. In this exercise, students will
+create a separate thread to load an image from a user-specified URL. Since downloading
+an image can be time-consuming, we want to make sure our app doesn't hang while this
+action is being performed. To clearly show the impact of creating and using another
+thread to handle this time-consuming task, we have introduced an intentional 5 second
+delay to the starter code.
+
+In this checkpoint, you will focus on creating the basic GUI layout for the `ImageApp`. Don't worry about
+adding functionality to the button just yet.  At the end of the checkpoint, your GUI should look like the
+following image:
+
+   
+
      
 1. The contents of the scene represent part of the state of your application.
    As such, the variables that we use to refer to those objects should be
