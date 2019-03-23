@@ -5,7 +5,7 @@
 >
 > - Loading...
 
-<a href="https://i.imgur.com/hjbuSHR.mp4">
+<a href="https://i.imgur.com/hjbuSHR.gifv">
 <img alt="brad video" src="https://i.imgur.com/hjbuSHR.gif?play" width="300">
 </a>
 
