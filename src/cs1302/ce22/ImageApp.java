@@ -31,13 +31,16 @@ public class ImageApp extends Application {
     TextField urlField;
     Button loadImage;
 
+    HBox loadingLayer;
+    Text loadingText;
+    
     /** The container for the loaded image */
     ImageView imgView;
-
+    
     /** A default image which loads when the application starts */
     private static final String DEFAULT_IMG =
         "http://cobweb.cs.uga.edu/~mec/cs1302/gui/default.png";
-
+    
     /** Default height and width for Images */
     private static final int DEF_HEIGHT = 500;
     private static final int DEF_WIDTH = 500;
@@ -48,6 +51,7 @@ public class ImageApp extends Application {
      * @param stage A reference to the stage object (window) created by the system.
      */ 
     public void start(Stage stage) {
+
         this.stage = stage;
         
         // Initializing the nodes for the scene graph
@@ -55,7 +59,9 @@ public class ImageApp extends Application {
         urlLayer = new HBox(10);
         urlField = new TextField("https://");
         loadImage = new Button("Load");
-
+        loadingLayer = new HBox(10);
+        loadintText = new Text("Loading...");
+        
         // Adding the textfield and load image button the the containing hbox
         urlLayer.getChildren().addAll(urlField, loadImage);
 
@@ -70,7 +76,6 @@ public class ImageApp extends Application {
         imgView.setPreserveRatio(true);
 
         // EventHandler for our button using a fancy method reference.
-        //EventHandler<ActionEvent> loadImgHandler = this::loadImage;
         loadImage.setOnAction(this::loadImage);
 
         // Add the hbox and imageview to the containing vbox and set the vbox
