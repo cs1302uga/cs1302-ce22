@@ -49,12 +49,11 @@ command depends on your present working directory), then please note that contex
    * If you have trouble running the starter code, then consult the 
      [CSCI 1302 JavaFX Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/javafx/javafx.md).
      
-An example image and the overall contaiment heirarchy for this app can be seen below:
+   An example image and the overall contaiment heirarchy for this app can be seen below:
 
-<table>
+   <table>
    <tr>
-      <td><img src="https://github.com/cs1302uga/cs1302-ce19/blob/master/ScreenShot.png?raw=true" width=300>
-</td>
+      <td><img src="https://github.com/cs1302uga/cs1302-ce19/blob/master/ScreenShot.png?raw=true" width=300></td>
       <td><pre><code>                                        --|
                          Stage            |
                            |              |
@@ -79,10 +78,10 @@ An example image and the overall contaiment heirarchy for this app can be seen b
      * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/brad.jpg`
      * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/SuccessKid.jpg`
  
-While our delay is artificial, time-consuming code is common in the real world (as in the mp3 app 
-discussed earlier). In this exercise, we will modify the app so that it remains responsive to user
-actions while loading the image and also indicates to the user via a `Text` object that the image is
-loading.
+   While our delay is artificial, time-consuming code is common in the real world (as in the mp3 app 
+   discussed earlier). In this exercise, we will modify the app so that it remains responsive to user
+   actions while loading the image and also indicates to the user via a `Text` object that the image is
+   loading.
 
 1. Modify the app to look and function like app in the video below.
    
