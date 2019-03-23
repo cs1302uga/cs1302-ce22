@@ -44,7 +44,7 @@ public class ImageApp extends Application {
       *  text is working properly.
       */
      private static final String DELAY_URL =
-         "http://deelay.me/2000/";
+         "http://deelay.me/5000/";
 
     /** Default height and width for Images */
     private static final int DEF_HEIGHT = 500;
@@ -103,8 +103,8 @@ public class ImageApp extends Application {
     private void loadImage(ActionEvent e) {
 
         try {
-            Image newImg = new Image(DELAY_URL + urlField.getText(),
-                                     DEF_HEIGHT, DEF_WIDTH, false, false);
+            String url = DELAY_URL + urlField.getText();
+            Image newImg = new Image(url, DEF_HEIGHT, DEF_WIDTH, false, false);
             imgView.setImage(newImg);
         } catch(IllegalArgumentException iae) {
             System.out.println("The supplied URL is invalid");
