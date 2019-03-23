@@ -38,6 +38,14 @@ public class ImageApp extends Application {
     private static final String DEFAULT_IMG =
         "http://cobweb.cs.uga.edu/~mec/cs1302/gui/default.png";
 
+    /**  URL for the deelay.me site. Adding this to the beginning of
+      *  our image URLs will delay the image download so we can see
+      *  how multithreading impacts our code and test that our loading
+      *  text is working properly.
+      */
+     private static final String DELAY_URL =
+         "http://deelay.me/2000/";
+
     /** Default height and width for Images */
     private static final int DEF_HEIGHT = 500;
     private static final int DEF_WIDTH = 500;
