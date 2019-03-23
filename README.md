@@ -42,8 +42,6 @@ command depends on your present working directory), then please note that contex
    $ find src
    ```
 
-### Exercise Steps
-
 1. **Compile and run the starter code without any errors or warnings.**
    Specify `bin` as the default package for your compiled code.
    
@@ -72,83 +70,45 @@ An example image and the overall contaiment heirarchy for this app can be seen b
    </code></pre></td>
    </tr>
    </table>
-   
-      
-   Each node corresponds to an object of some class under the 
-   [`javafx`](https://docs.oracle.com/javase/8/javafx/api/toc.htm)
-   package. The diagram for the scene graph assumes that child nodes
-   are added to their parents in a left-to-right order. For example,
-   the `HBox` and `ImageView` objects are added to the collection of
-   child nodes for the `VBox` object in that order.
 
+1. There's one small difference between this app and the original `ImageApp`: we have 
+   introduced an intentional 5 second delay to the starter code. Load one of the following
+   URLs to see the delay:
+     * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/pikachu.png`
+     * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/brad.jpg`
+     * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/SuccessKid.jpg`
+ 
+### Exercise Steps
 
-   
-1. However, there's one small difference: we have introduced an intentional 5 second
-   delay to the starter code.
-   
-1. 
- It we need our GUI application to remain responsive
-while other tasks are happening in the background. In this exercise, students will
-create a separate thread to load an image from a user-specified URL. Since downloading
-an image can be time-consuming, we want to make sure our app doesn't hang while this
-action is being performed. To clearly show the impact of creating and using another
-thread to handle this time-consuming task, we have introduced an intentional 5 second
-delay to the starter code.
+While our delay is artificial, time-consuming code is common in the real world (as in the mp3 app 
+discussed earlier). In this exercise, we will modify the app so that it remains responsive to user
+actions while loading the image and also indicates to the user via a `Text` object that the image is
+loading.
 
-In this checkpoint, you will focus on creating the basic GUI layout for the `ImageApp`. Don't worry about
-adding functionality to the button just yet.  At the end of the checkpoint, your GUI should look like the
-following image:
-
+1. Modify the app by adding an `HBox` object which will contain a `Text` object as seen in the
+   containment heirarchy below. We will use this `Text` object to indicate when an image is loading.
    
-
-     
-1. The contents of the scene represent part of the state of your application.
-   As such, the variables that we use to refer to those objects should be
-   instance variables of your class. Consult the 
-   [API Documentation](https://docs.oracle.com/javase/8/javafx/api/toc.htm) and 
-   [referenced bookmarks](http://cobweb.cs.uga.edu/~mec/cs1302/gui/)
-   to determine some of the import statements that are needed, then add them to
-   the file for your `ImageApp` class. **Recompile before continuing.** 
+   ```                                            --|
+                         Stage                    |
+                           |                      |
+                         Scene                    |
+          |--              |                      |
+          |               VBox                    | Overall
+          |               / \  \___________       | Containment
+   Scene  |              /   \             \      | Hierarchy
+   Graph  |            HBox  ImageView    HBox    |
+          |            / \                  |     |
+          |           /   \                 |     |
+          |    TextField  Button          Text    |
+          |--                                   --|
+          
+```          
+1. Set your `HBox` container to have a preferred width of 20.
    
-1. Stage and commit your changes.
-
-1. Now, for each object in the scene graph, declare an **instance variable** 
-   of the appropriate type with a good name. Do not create the objects here!
-   
-1. In the `start` method, construct the objects for the scene graph in
-   a top-down fashion, assigning their references to the instance variables
-   that you just declared. 
-   
-   1. Consult the 
-      [API Documentation](https://docs.oracle.com/javase/8/javafx/api/toc.htm) and 
-      for each class to see what constructors are available.
-      
-   1. Try to make the text content of visible nodes match the screenshot.
-      
-   1. For the `ImageView` object, we would like for you to create a separate
-      [`Image`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html)
-      object and use the 
-      [`ImageView(Image)`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/ImageView.html#ImageView-javafx.scene.image.Image-) constructor. The URL string that you should provide to
-      the `Image` constructor is:
-   
-      ```
-      http://cobweb.cs.uga.edu/~mec/cs1302/gui/default.png
-      ```
-      
-      **NOTE:** Do not use the `ImageView` constructor that directly takes a URL string.
-      If you do, then it will make it potentially more difficult to change the image
-      in a later step.
-  
-   1. Add any child nodes to the to their parent's 
-      collection of children using `getChildren().add`. 
-      
-   1. **Recompile and run.**
+1. **Recompile and run.**
 
 1. Stage and commit your changes.
 
-1. If you completed the steps correctly, your app should look similar to
-   the screenshot provided above. Congratulations on a good looking app!
-   
 **CHECKPOINT**
 
 1. Now that you have your app looking good, let's make it do stuff. 
