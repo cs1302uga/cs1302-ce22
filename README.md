@@ -5,7 +5,9 @@
 >
 > - Loading...
 
+<a href="https://i.imgur.com/hjbuSHR.mp4">
 <img alt="brad video" src="https://i.imgur.com/hjbuSHR.gif?play" width="300">
+</a>
 
 It is important that graphical applications remain responsive while time-consuming tasks
 are being performed. Imagine an mp3 player application that didn't allow you to interact
