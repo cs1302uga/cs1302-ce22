@@ -91,8 +91,8 @@ command depends on your present working directory), then please note that contex
    
    The app should do the following while loading an image:
      
-   * Display `"Loading..."` while the image app.
-   * Diable the button.
+   * Display `"Loading..."` near the bottom of the stage;
+   * Diable the button; and
    * Not freeze / hang! 
    
 1. **Compile and run your code without any errors or warnings.**
