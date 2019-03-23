@@ -31,9 +31,6 @@ public class ImageApp extends Application {
     TextField urlField;
     Button loadImage;
 
-    HBox loadingLayer;
-    Text loadingText;
-    
     /** The container for the loaded image */
     ImageView imgView;
     
@@ -67,8 +64,6 @@ public class ImageApp extends Application {
         urlLayer = new HBox(10);
         urlField = new TextField("https://");
         loadImage = new Button("Load");
-        loadingLayer = new HBox(10);
-        loadintText = new Text("Loading...");
         
         // Adding the textfield and load image button the the containing hbox
         urlLayer.getChildren().addAll(urlField, loadImage);
