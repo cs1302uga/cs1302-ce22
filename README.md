@@ -5,10 +5,6 @@
 >
 > - Loading...
 
-<a href="https://i.imgur.com/hjbuSHR.gifv">
-<img alt="brad video" src="https://i.imgur.com/hjbuSHR.jpg?play" width="300">
-</a>
-
 It is important that graphical applications remain responsive while time-consuming tasks
 are being performed. Imagine an mp3 player application that didn't allow you to interact
 with the GUI while the current song was playing. That would mean you couldn't pause,
@@ -88,73 +84,22 @@ discussed earlier). In this exercise, we will modify the app so that it remains 
 actions while loading the image and also indicates to the user via a `Text` object that the image is
 loading.
 
-1. Modify the app by adding an `HBox` object which will contain a `Text` object as seen in the
-   containment heirarchy below. We will use this `Text` object to indicate when an image is loading.
+1. Modify the app to look and function like app in the video below.
    
-   ```                                            --|
-                         Stage                    |
-                           |                      |
-                         Scene                    |
-          |--              |                      |
-          |               VBox                    | Overall
-          |               / \  \___________       | Containment
-   Scene  |              /   \             \      | Hierarchy
-   Graph  |            HBox  ImageView    HBox    |
-          |            / \                  |     |
-          |           /   \                 |     |
-          |    TextField  Button          Text    |
-          |--                                   --|        
-   ```          
-
-1. Set your `HBox` container to have a preferred width of 20.
+   <a href="https://i.imgur.com/hjbuSHR.gifv">
+   <img alt="brad video" src="https://i.imgur.com/hjbuSHR.jpg?play" width="300">
+   </a>
+   
+   * The app should do the following while loading the image:
+     
+     * Display `"Loading..."` while the image app.
+     * Diable the button.
+     * Not freeze / hang! 
    
 1. **Recompile and run.**
 
 1. Stage and commit your changes.
 
-**CHECKPOINT**
-
-1. Now that you have your app looking good, let's make it do stuff. 
-
-1. In the `start` method of your `ImageApp` class, declare a variable
-   of type `EventHandler<ActionEvent>` called `loadHandler`, then assign
-   to it, using a lambda expression, an implementation of
-   `EventHandler<ActionEvent>` that prints out the text of the
-   `TextField` to standard output (i.e., the terminal).
-   **Recompile before continuing.**
-   
-   * Take special care that you import the correct `ActionEvent` class,
-     as a quick Internet search may recommend the wrong one!
-     Consult the 
-     [API Documentation](https://docs.oracle.com/javase/8/javafx/api/toc.htm) and 
-     [referenced bookmarks](http://cobweb.cs.uga.edu/~mec/cs1302/gui/)
-     to determine the import statements that are needed.
-     
-1. Once your app is able to print the text from the `TextField` to 
-   standard output, ammend the code that is also creates an `Image`
-   object using the supplied URL, then sets the `image` propery of
-   the `ImageView` using the appropriated setter method.
-   **Recompile before continuing.**
-   
-   * Here are some URLs to try when testing your program:
-   
-     * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/pikachu.png`
-     * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/brad.jpg`
-     * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/SuccessKid.jpg`
-   
-   * Your program should not crash when supplied invalid input. Use
-     exception handling, as needed, to make the experience nicer
-     for the user. While we will explore creating popup windows
-     and dialogs in the future, it is sufficient to print a friendly
-     error message to standard output instead of letting the
-     program crash or display a stack trace.
-     
-1. Stage and commit your changes.
-
-1. If you completed the steps correctly, your app should not only look 
-   similar to the screenshot provided above, but it has the desired
-   functionality. Congratulations on a good looking, functional app!
-        
 **CHECKPOINT**
    
 <hr/>
