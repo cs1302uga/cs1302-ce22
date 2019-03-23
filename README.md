@@ -90,15 +90,21 @@ loading.
    <img alt="brad video" src="https://i.imgur.com/hjbuSHR.jpg?play" width="300">
    </a>
    
-   * The app should do the following while loading the image:
+   The app should do the following while loading an image:
      
-     * Display `"Loading..."` while the image app.
-     * Diable the button.
-     * Not freeze / hang! 
+   * Display `"Loading..."` while the image app.
+   * Diable the button.
+   * Not freeze / hang! 
    
-1. **Recompile and run.**
-
-1. Stage and commit your changes.
+1. **Compile and run your code without any errors or warnings.**
+   Also stage and commit your changes.
+   
+1. Tag your commit so that it's easier to checkout at a later
+   point in time:
+   
+   ```
+   $ git tag loading
+   ```
 
 **CHECKPOINT**
    
