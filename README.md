@@ -44,7 +44,8 @@ command depends on your present working directory), then please note that contex
 
 ### Exercise Steps
 
-        It we need our GUI application to remain responsive
+    
+ It we need our GUI application to remain responsive
 while other tasks are happening in the background. In this exercise, students will
 create a separate thread to load an image from a user-specified URL. Since downloading
 an image can be time-consuming, we want to make sure our app doesn't hang while this
