@@ -99,9 +99,9 @@ loading.
           |            / \                  |     |
           |           /   \                 |     |
           |    TextField  Button          Text    |
-          |--                                   --|
-          
-```          
+          |--                                   --|        
+   ```          
+
 1. Set your `HBox` container to have a preferred width of 20.
    
 1. **Recompile and run.**
