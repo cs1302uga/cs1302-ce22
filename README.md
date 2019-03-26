@@ -83,7 +83,7 @@ command depends on your present working directory), then please note that contex
    actions while loading the image and also indicates to the user via a `Text` object that the image is
    loading.
 
-1. Modify the app to look and function like app in the video below.
+1. Modify the app to look and function like app in the Brad video below.
    
    <a href="https://i.imgur.com/hjbuSHR.gifv">
    <img alt="brad video" src="https://i.imgur.com/hjbuSHR.jpg?play" width="300">
@@ -106,6 +106,10 @@ command depends on your present working directory), then please note that contex
    ```
 
 **CHECKPOINT**
+
+1. Work on your project. Feel free to ask questions.
+
+**NOT A CHECPOINT**
    
 <hr/>
 
