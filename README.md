@@ -10,7 +10,7 @@ are being performed. Imagine an mp3 player application that didn't allow you to 
 with the GUI while the current song was playing. That would mean you couldn't pause,
 change songs, minimize the app, etc until the song ended. This problem is solved by using
 multiple threads of execution. This class exercise introduces the reader to the use of
-Java threads to allow seemingly simulataneous actions within an application.
+Java threads to allow seemingly simultaneous actions within an application.
 
 ## References and Prerequisites
 
@@ -92,7 +92,7 @@ command depends on your present working directory), then please note that contex
    The app should do the following while loading an image:
      
    * Display `"Loading..."` near the bottom of the stage;
-   * Diable the button; and
+   * Disable the button; and
    * Not freeze / hang! 
    
 1. **Compile and run your code without any errors or warnings.**
