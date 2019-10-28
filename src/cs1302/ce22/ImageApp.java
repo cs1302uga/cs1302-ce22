@@ -33,18 +33,18 @@ public class ImageApp extends Application {
 
     /** The container for the loaded image */
     ImageView imgView;
-    
+
     /** A default image which loads when the application starts */
     private static final String DEFAULT_IMG =
         "http://cobweb.cs.uga.edu/~mec/cs1302/gui/default.png";
 
     /**  URL for the deelay.me site. Adding this to the beginning of
-      *  our image URLs will delay the image download so we can see
-      *  how multithreading impacts our code and test that our loading
-      *  text is working properly.
-      */
-     private static final String DELAY_URL =
-         "http://deelay.me/5000/";
+     *  our image URLs will delay the image download so we can see
+     *  how multithreading impacts our code and test that our loading
+     *  text is working properly.
+     */
+    private static final String DELAY_URL =
+        "http://deelay.me/5000/";
 
     /** Default height and width for Images */
     private static final int DEF_HEIGHT = 500;
@@ -54,17 +54,17 @@ public class ImageApp extends Application {
      * The entry point for our image viewer application.
      *
      * @param stage A reference to the stage object (window) created by the system.
-     */ 
+     */
     public void start(Stage stage) {
 
         this.stage = stage;
-        
+
         // Initializing the nodes for the scene graph
         vbox = new VBox();
         urlLayer = new HBox(10);
         urlField = new TextField("https://");
         loadImage = new Button("Load");
-        
+
         // Adding the textfield and load image button the the containing hbox
         urlLayer.getChildren().addAll(urlField, loadImage);
 
@@ -92,14 +92,14 @@ public class ImageApp extends Application {
         stage.setTitle("1302 Image Viewer!");
         stage.sizeToScene();
         stage.show();
-        
+
     } // start
 
     /**
      * Students will provide javadoc comments here.
      *
      * @param e source event
-     */ 
+     */
     private void loadImage(ActionEvent e) {
 
         try {
@@ -109,8 +109,7 @@ public class ImageApp extends Application {
         } catch(IllegalArgumentException iae) {
             System.out.println("The supplied URL is invalid");
         } // try
-        
-    } // loadImage
-    
-} // ImageApp
 
+    } // loadImage
+
+} // ImageApp
