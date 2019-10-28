@@ -23,30 +23,31 @@ public class ImageApp extends Application {
     Stage stage;
     Scene scene;
 
-    /** The root container for the application scene graph */
+    /** The root container for the application scene graph. */
     VBox vbox;
 
-    /** The container for the url textfield and the load image button */
+    /** The container for the url textfield and the load image button. */
     HBox urlLayer;
     TextField urlField;
     Button loadImage;
 
-    /** The container for the loaded image */
+    /** The container for the loaded image. */
     ImageView imgView;
 
-    /** A default image which loads when the application starts */
+    /** A default image which loads when the application starts. */
     private static final String DEFAULT_IMG =
         "http://cobweb.cs.uga.edu/~mec/cs1302/gui/default.png";
 
-    /**  URL for the deelay.me site. Adding this to the beginning of
-     *  our image URLs will delay the image download so we can see
-     *  how multithreading impacts our code and test that our loading
-     *  text is working properly.
+    /**
+     * URL for the deelay.me site. Adding this to the beginning of
+     * our image URLs will delay the image download so we can see
+     * how multithreading impacts our code and test that our loading
+     * text is working properly.
      */
     private static final String DELAY_URL =
         "http://deelay.me/5000/";
 
-    /** Default height and width for Images */
+    /** Default height and width for Images. */
     private static final int DEF_HEIGHT = 500;
     private static final int DEF_WIDTH = 500;
 
@@ -106,7 +107,7 @@ public class ImageApp extends Application {
             String url = DELAY_URL + urlField.getText();
             Image newImg = new Image(url, DEF_HEIGHT, DEF_WIDTH, false, false);
             imgView.setImage(newImg);
-        } catch(IllegalArgumentException iae) {
+        } catch (IllegalArgumentException iae) {
             System.out.println("The supplied URL is invalid");
         } // try
 
