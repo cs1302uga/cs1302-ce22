@@ -71,8 +71,8 @@ command depends on your present working directory), then please note that contex
    </tr>
    </table>
 
-1. There's one small difference between this app and the original `ImageApp`: we have 
-   introduced an intentional 5 second delay to the starter code. Load one of the following
+1. There's one small difference between this app and the original `ImageApp`: **we have 
+   introduced an intentional 5 second delay to the starter code.** Load one of the following
    URLs to see the delay:
      * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/pikachu.png`
      * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/brad.jpg`
