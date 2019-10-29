@@ -1,5 +1,7 @@
 # cs1302-ce22 Loading...
 
+![Approved for: Fall 2019](https://img.shields.io/badge/Approved%20for-Fall%202019-brightgreen)
+
 > Loading...
 >
 >
@@ -11,6 +13,9 @@ with the GUI while the current song was playing. That would mean you couldn't pa
 change songs, minimize the app, etc until the song ended. This problem is solved by using
 multiple threads of execution. This class exercise introduces the reader to the use of
 Java threads to allow seemingly simultaneous actions within an application.
+
+## Course-Specific Learning Outcomes
+* **LO7.a:** (Partial) Design and implement a graphical user interface in a software project.
 
 ## References and Prerequisites
 
