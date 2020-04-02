@@ -111,7 +111,7 @@ command depends on your present working directory), then please note that contex
    $ git tag loading
    ```
 
-![CP](https://img.shields.io/badge/Checkpoint-1-success?style=for-the-badge)
+![CP](https://img.shields.io/badge/Checkpoint-2-success?style=for-the-badge)
 
 1. Create a plain text file called `SUBMISSION.md` directly inside this exercise
    directory with the following information:
