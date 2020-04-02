@@ -79,8 +79,9 @@ command depends on your present working directory), then please note that contex
    </table>
 
 1. There's one small difference between this app and the original `ImageApp`: **we have 
-   introduced an intentional 5 second delay to the starter code.** Load one of the following
-   URLs to see the delay:
+   introduced an intentional 5 second delay to the starter code.** Notice that while an
+   image is loading, the app becomes unresponsive (try changing the text in the URL field
+   while the image is loading). To test, load one of the following URLs:
      * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/pikachu.png`
      * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/brad.jpg`
      * `http://cobweb.cs.uga.edu/~mec/cs1302/gui/SuccessKid.jpg`
@@ -90,7 +91,7 @@ command depends on your present working directory), then please note that contex
    actions while loading the image and also indicates to the user via a `Text` object that the image is
    loading.
 
-1. Modify the app to look and function like app in the Brad video below.
+1. Modify the app to look and function like the app shown in the Brad video below.
    
    <a href="https://i.imgur.com/hjbuSHR.gifv">
    <img alt="brad video" src="https://i.imgur.com/hjbuSHR.jpg?play" width="300">
