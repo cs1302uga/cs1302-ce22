@@ -113,7 +113,7 @@ command depends on your present working directory), then please note that contex
    $ git tag loading
    ```
 
-![CP](https://img.shields.io/badge/Checkpoint-2-success?style=for-the-badge)
+![CP](https://img.shields.io/badge/Checkpoint-1-success?style=for-the-badge)
 
 **Each student needs to individually submit their own work.**
 
