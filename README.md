@@ -1,7 +1,6 @@
 # cs1302-ce22 Loading...
 
-![Approved for: Spring 2020](https://img.shields.io/badge/Approved%20for-Spring%202020-blue)
-![Instruction: Online](https://img.shields.io/badge/Instruction-Online-important)
+![Approved for: Fall 2020](https://img.shields.io/badge/Approved%20for-Fall%202020-blueviolet)
 
 > Loading...
 >
@@ -21,13 +20,13 @@ Java threads to allow seemingly simultaneous actions within an application.
 ## References and Prerequisites
 
 * [CSCI 1302 Thread Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/threads/brief-intro-threads.md)
-* [CSCI 1302 JavaFX 8 Bookmarks and Notes](http://cobweb.cs.uga.edu/~mec/cs1302/gui/)
+* [JavaFX 11 Bookmarks](https://github.com/cs1302uga/cs1302-tutorials/blob/master/javafx/javafx-bookmarks.md)
 * [CSCI 1302 JavaFX Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/javafx/javafx.md)
 
 ## Questions
 
 In your notes, clearly answer the following questions. These instructions assume that you are 
-logged into the Nike server. 
+logged into the Odin server. 
 
 **NOTE:** If a step requires you to enter in a command, please provide in your notes the full 
 command that you typed to make the related action happen. If context is necessary (e.g., the 
@@ -35,7 +34,7 @@ command depends on your present working directory), then please note that contex
 
 ### Getting Started
 
-1. Use Git to clone the repository for this exercise onto Nike into a subdirectory called `cs1302-ce22`:
+1. Use Git to clone the repository for this exercise onto Odin into a subdirectory called `cs1302-ce22`:
 
    ```
    $ git clone --depth 1 https://github.com/cs1302uga/cs1302-ce22.git
@@ -48,7 +47,10 @@ command depends on your present working directory), then please note that contex
    ```
    $ find src
    ```
-### Exercise Steps
+
+## Exercise Steps
+
+### Checkpoint 1 Steps
 
 1. **Compile and run the starter code without any errors or warnings.**
    Specify `bin` as the default package for your compiled code.
@@ -113,36 +115,52 @@ command depends on your present working directory), then please note that contex
    $ git tag loading
    ```
 
-![CP](https://img.shields.io/badge/Checkpoint-1-success?style=for-the-badge)
+<hr/>
+
+![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-1-success?style=for-the-badge)
+
+<hr/>
+
+### Submission Steps
 
 **Each student needs to individually submit their own work.**
 
-1. Create a plain text file called `SUBMISSION.md` directly inside this exercise
-   directory with the following information:
+1. Create a plain text file called `SUBMISSION.md` directly inside the `cs1302-ce22`
+   directory with the following information.
 
    1. Your name and UGA ID number;
    1. Collaborator names, if any; and
-   1. The weekly code (listed with the exercise on eLC).
+   1. If you created the API website, include the full link to the site you generated.
    
-   Here is an example:
+   Here is an example of the contents of `SUBMISSION.md`.
    
    ```
    1. Sally Smith (811-000-999)
    2. Collaborators: Joe Allen, Stacie Mack
-   3. Weekly Code: replace-with-actual-code
+   3. https://webwork.cs.uga.edu/~user/cs1302-ce22-doc
    ```
 
-1. Add and commit `SUBMISSION.md`. Also, do a final check to ensure your code 
-   passes the `checkstyle` audit, then stage and commit all changes, if needed.
+1. Change directories to the parent of `cs1302-ce22` (e.g., `cd ..` from `cs1302-ce22`). If you would like
+   to make a backup tar file, the instructions are in the submissions steps for [ce02](https://github.com/cs1302uga/cs1302-ce02).
+   We won't repeat those steps here and you can view them as optional.
+   
+1. Use the `submit` command to submit this exercise to `csci-1302`:
+   
+   ```
+   $ submit cs1302-ce22 csci-1302
+   ```
+   
+   Read the output of the submit command very carefully. If there is an error while submitting, then it will displayed 
+   in that output. Additionally, if successful, the submit command creates a new receipt file in the directory you 
+   submitted. The receipt file begins with rec and contains a detailed list of all files that were successfully submitted. 
+   Look through the contents of the rec file and always remember to keep that file in case there is an issue with your submission.
 
-1. Change into the parent directory and use the `submit` command to submit this exercise to `cs1302a`:
-   
-   ```
-   $ submit cs1302-ce22 cs1302a
-   ```
-   
-![CP](https://img.shields.io/badge/Checkpoint-Submission-success?style=for-the-badge)
-   
+   **Note:** You must be on Odin to submit.
+
+<hr/>
+
+![CP](https://img.shields.io/badge/Just%20Finished-Submission-success?style=for-the-badge)
+
 <hr/>
 
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-nd/4.0/)
