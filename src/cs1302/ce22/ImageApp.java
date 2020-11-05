@@ -14,7 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Priority;
 
 /**
- * A basic JavaFX 8 program which takes a user specified URL and loads it
+ * A basic JavaFX 11 program which takes a user specified URL and loads it
  * into an {@code ImageView}.
  *
  */
